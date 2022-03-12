@@ -11,13 +11,13 @@
     <div id="songlist"></div>
 
     <script>
-        fetch("https://seanliu42.github.io/assign9/songlist.json")
-            .then(function(resp) {
-                return resp.json();
-            })
-            .then(function(data){
-                console.log(data);
-            })
+        data = fetch("https://seanliu42.github.io/assign9/songlist.json")
+            // .then(function(resp) {
+            //     return resp.json();
+            // })
+            // .then(function(data){
+            //     console.log(data);
+            // })
 
             var stringified = JSON.stringify(data);
             document.getElementbyId("songlist").innerHTML = stringified;
