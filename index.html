@@ -11,10 +11,14 @@
     <div id="songlist"></div>
 
     <script>
-        var data = fetch("https://seanliu42.github.io/assign9/songlist.json");
-        console.log(data);
-            var stringified = JSON.stringify(data);
-            document.getElementbyId("songlist").innerHTML = stringified;
+        fetch("https://seanliu42.github.io/assign9/songlist.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                var stringified = JSON.stringify(data);
+                document.getElementbyId("songlist").innerHTML = stringified;
+            })
+
     </script>
 </body>
 </html>
