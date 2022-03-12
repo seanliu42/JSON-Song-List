@@ -7,6 +7,9 @@
     <title>JSON Song List</title>
 </head>
 <body>
+
+    <div id="songlist"></div>
+
     <script>
         fetch("https://seanliu42.github.io/assign9/songlist.json")
             .then(function(resp) {
@@ -15,6 +18,9 @@
             .then(function(data){
                 console.log(data);
             })
+
+            var stringified = JSON.stringify(data);
+            document.getElementbyId("songlist").innerHTML = stringified;
     </script>
 </body>
 </html>
