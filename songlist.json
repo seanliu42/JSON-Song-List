@@ -1,60 +1,60 @@
 [
 {
-    "song": "Ski",
+    "title": "Ski",
     "artist": ["Young Thug","Gunna"],
     "genre": ["Hip-Hop","Rap"],
     "release": "2021"
 },
 {
-    "song": "Dilemma",
+    "title": "Dilemma",
     "artist": ["Nelly","Kelly Rowland"],
     "genre": "RNB",
     "release": "2002"
 },
 {
-    "song": "Thinking Out Loud",
+    "title": "Thinking Out Loud",
     "artist": "Ed Sheeran",
     "genre": "Pop",
     "release": "2014"
 },
 {
-    "song": "I Wanna Dance With Somebody (Who Loves Me)",
+    "title": "I Wanna Dance With Somebody (Who Loves Me)",
     "artist": "Whitney Houston",
     "genre": ["RNB","Soul"],
     "release": "1987"
 },
 {
-    "song": "Clarity",
+    "title": "Clarity",
     "artist": ["Zedd","Foxes"],
     "genre": "EDM",
     "release": "2012"
 },
 {
-    "song": "Can't Help Falling in Love",
+    "title": "Can't Help Falling in Love",
     "artist": "Elvis Presley",
     "genre": "Pop",
     "release": "1961"
 },
 {
-    "song": "Sweet Caroline",
+    "title": "Sweet Caroline",
     "artist": "Neil Diamond",
     "genre": "Pop",
     "release": "1969"
 },
 {
-    "song": "God's Plan",
+    "title": "God's Plan",
     "artist": "Drake",
     "genre": ["Hip-Hop","Pop"],
     "release": "2018"
 },
 {
-    "song": "Lover's Rock",
+    "title": "Lover's Rock",
     "artist": "Sade",
     "genre": ["Soul","Jazz"],
     "release": "2000"
 },
 {
-    "song": "Father Stretch My Hands Pt. 1",
+    "title": "Father Stretch My Hands Pt. 1",
     "artist": "Kanye West",
     "genre": ["Hip-Hop","Rap"],
     "release": "2016"
