@@ -4,21 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="songlist.json"></script>
     <title>JSON Song List</title>
 </head>
 <body>
 
-    <div id="songlist"></div>
+    <div id="part4">
+        <h1><b>Find Songs By Genre</b></h1>
+        <form>
+            <select name="genre" id="genre">
+                <option value =""></option>
+                <option value="Hip-Hop">Hip-Hop</option>
+                <option value="Rap">Rap</option>
+                <option value="RNB">RNB</option>
+                <option value="Soul">Soul</option>
+                <option value="Jazz">Jazz</option>
+                <option value="EDM">EDM</option>
+                <option value="Pop">Pop</option>
+            </select>
+            <input type="button" id="button" value="Search" onclick="part4()">
+        </form>
+        <p id="filteredSongs"></p>
+    </div>
+
+    <div id="part3">
+        <h1 id="title"><b>All Songs</b></h1>
+        <p id="displaySongs"></div>
+    </div>
+
+    <div id="part2">
+        <h1><b>Serialized Data</b></h1>
+        <p id="allSongs"></div>
+    </div>  
 
     <script>
-        fetch("https://seanliu42.github.io/assign9/songlist.json")
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                var stringified = JSON.stringify(data);
-                document.getElementbyId("songlist").innerHTML = stringified;
-            })
+        // Used in Part 2
+        function getInfo(array) {
+            for (i = 0; i < 10; i++) {
+                output += array[i].title + "<br>";
+                output += "Artist: " + array[i].artist + "<br>";
+                output += "Genre: " + array[i].genre + "<br>";
+                output += "Released: " + array[i].release + "<br><br>";
+            }
+        }
+
+        // Part 3
+        function part3(songs) {
+            output = "";
+            getInfo(songs);
+            document.getElementById("displaySongs").innerHTML = output;
+        }
+
+        // Used in Part 4
+        function checkGenre(array, desiredGenre) {
+            for(i = 0; i < 10; i++) {
+                if(array[i].genre[0] == desiredGenre || array[i].genre[1] == desiredGenre) {
+                    output += array[i].title + "<br>";
+                    output += ("Artists: " + array[i].artist + "<br>");
+                    output += ("Genre: " + array[i].genre + "<br>");
+                    output += ("Release Year: " + array[i].release + "<br><br>");
+                }
+            }
+        }
+
+        // Part 4
+        function part4() {
+            desiredGenre = document.getElementById("genre").value;
+            output = "";
+            if (desiredGenre != "") {
+                checkGenre(songs,desiredGenre);
+            }
+            document.getElementById("filteredSongs").innerHTML = output;
+        }
+
+        // Part 2
+        strSongs = JSON.stringify(songs);
+        document.getElementById("allSongs").innerHTML = strSongs;
+
+        part3(songs);
 
     </script>
-</body>
+    </body>
+
 </html>
