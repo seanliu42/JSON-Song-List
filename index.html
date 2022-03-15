@@ -22,7 +22,7 @@
                 <option value="EDM">EDM</option>
                 <option value="Pop">Pop</option>
             </select>
-            <input type="button" id="button" value="Filter" onclick="part4()">
+            <input type="button" id="button" value="Filter" onclick="printSearch()">
         </form>
         <p id="filteredSongs"></p>
     </div>
@@ -38,7 +38,7 @@
     </div>  
 
     <script>
-        // Used in Part 2
+        // Concatenates all the info from the JSON array into a string thats formatted for readability
         function getInfo(array) {
             for (i = 0; i < 10; i++) {
                 output += array[i].title + "<br>";
@@ -48,14 +48,14 @@
             }
         }
 
-        // Part 3
-        function part3(songs) {
+        // Prints the string formatted in getInfo to the webpage
+        function print(songs) {
             output = "";
             getInfo(songs);
             document.getElementById("displaySongs").innerHTML = output;
         }
 
-        // Used in Part 4
+        // Finds the songs in the JSON array that match the desired genre then concatenates them into a string formatted for readability
         function checkGenre(array, desiredGenre) {
             for(i = 0; i < 10; i++) {
                 if(array[i].genre[0] == desiredGenre || array[i].genre[1] == desiredGenre) {
@@ -67,8 +67,8 @@
             }
         }
 
-        // Part 4
-        function part4() {
+        // Ensures that a valid genre has been selected in the form then prints the string formatted in checkGenre to the webpage
+        function printSearch() {
             desiredGenre = document.getElementById("genre").value;
             output = "";
             if (desiredGenre != "") {
@@ -77,11 +77,14 @@
             document.getElementById("filteredSongs").innerHTML = output;
         }
 
-        // Part 2
+        // Part 2 of the assignment
         strSongs = JSON.stringify(songs);
         document.getElementById("allSongs").innerHTML = strSongs;
 
-        part3(songs);
+        // Part 3 of the assignment
+        print(songs);
+
+        // Part 4 is executed when the form is submitted
 
     </script>
     </body>
