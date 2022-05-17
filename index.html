@@ -40,7 +40,7 @@
     <script>
         // Concatenates all the info from the JSON array into a string thats formatted for readability
         function getInfo(array) {
-            for (i = 0; i < 10; i++) {
+            for (i = 0; i < array.length; i++) {
                 output += array[i].title + "<br>";
                 output += "Artist: " + array[i].artist + "<br>";
                 output += "Genre: " + array[i].genre + "<br>";
@@ -57,12 +57,15 @@
 
         // Finds the songs in the JSON array that match the desired genre then concatenates them into a string formatted for readability
         function checkGenre(array, desiredGenre) {
-            for(i = 0; i < 10; i++) {
-                if(array[i].genre[0] == desiredGenre || array[i].genre[1] == desiredGenre) {
-                    output += array[i].title + "<br>";
-                    output += ("Artists: " + array[i].artist + "<br>");
-                    output += ("Genre: " + array[i].genre + "<br>");
-                    output += ("Release Year: " + array[i].release + "<br><br>");
+            for(i = 0; i < array.length; i++) {
+                for (j = 0; j < array[i].genre.length; j++) {
+                    if (array[i].genre[j] == desiredGenre) {
+                        output += array[i].title + "<br>";
+                        output += ("Artists: " + array[i].artist + "<br>");
+                        output += ("Genre: " + array[i].genre + "<br>");
+                        output += ("Release Year: " + array[i].release + "<br><br>");
+                        break;
+                    }
                 }
             }
         }
